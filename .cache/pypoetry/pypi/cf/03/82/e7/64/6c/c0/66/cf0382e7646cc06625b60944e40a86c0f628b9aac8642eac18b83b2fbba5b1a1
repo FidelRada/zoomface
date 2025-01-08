@@ -1,0 +1,1 @@
+9999999999{"name": "grpcio", "version": "1.47.0", "summary": "HTTP/2-based RPC framework", "platform": null, "requires_dist": ["six (>=1.5.2)", "futures (>=2.2.0) ; python_version < \"3.2\"", "enum34 (>=1.0.4) ; python_version < \"3.4\"", "grpcio-tools (>=1.47.0) ; extra == 'protobuf'"], "requires_python": ">=3.6", "files": [], "_cache_version": "1.0.0"}

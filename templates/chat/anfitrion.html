@@ -1,0 +1,94 @@
+{% extends '/layouts/plantillaBase.html'%} 
+{% block title %}
+{{title}}
+{% endblock %} 
+
+{% block body %}style="background-color: rgb(50, 54, 54);"
+{% endblock %} 
+{% block tablero %}
+
+<div class="container-fluid">
+
+    <h1>
+        {{title}}
+    </h1>
+
+    <div id="tablero" class="row row-cols-1 row-cols-md-2 g-4">
+        <div id="c1" class="col">
+            <div class="card">
+                <!--style="position: relative;"-->
+                <video id="video" autoplay="true" style="position: relative; "></video>
+                <!--style="position: absolute; "-->
+                <canvas id="canvas" style="position: relative; "></canvas>
+                <div class="card-body ">
+                    <h5 id="nombre-anfitrion">{{nombre}}</h5>
+                    <h5 id="id-anfitrion" class="card-title" style="font-size: 10px;"></h5>
+                    <button id="btn" class="btn btn-primary">Emitir</button>
+                    <a id="btn-terminar" class="btn btn-danger" href="/chat/terminar">Terminar</a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        codigo de sala
+                    </button>
+					<!-- Button trigger modal -->
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cambiarNombreModal">
+                        cambiar nombre
+                    </button>
+					
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">codigo de la sala</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p type="text" name="" id="invitacion"></p>
+						<p type="text" name="" id="link"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-copiar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">copiar Codigo</button>
+						<button id="btn-copiar-link" type="button" class="btn btn-secondary" data-bs-dismiss="modal">copiar Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cambiarNombreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cambiar Nombre</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+							<input type="text" class="form-control" id="in-nombre" placeholder="nombre">
+							<label for="floatingInput">Nombre</label>
+						</div>
+                    </div>
+                    <div class="modal-footer">
+						<button id="btn-cambiar-nombre" type="button" class="btn btn-secondary" data-bs-dismiss="modal">ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		
+
+    </div>
+
+</div>
+
+<!--script src="/socket.io/socket.io.js "></script>
+    <!--script src="javascripts/modelos/"></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="/static/javascripts/face-api.min.js"></script>
+<script src="/static/javascripts/socket-anfitrion.js "></script>
+{% endblock %}

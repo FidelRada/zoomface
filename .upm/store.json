@@ -1,0 +1,1 @@
+{"version":2,"languages":{"python-python3-poetry":{"specfileHash":"fc201953386ef9b6cdc8618c12279046","lockfileHash":"3b2602ef52565d18f17dead18920bc46","guessedImports":["firebase-admin","Flask-SocketIO","setuptools","Flask"],"guessedImportsHash":"9cc7392c48d8aece74b1b3355453a24e"}}}
